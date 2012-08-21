@@ -32,7 +32,7 @@ class ExemplaresController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @exemplares }
+      format.json { render json: @exemplare }
     end
   end
 
