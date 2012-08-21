@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <!-- título -->
+  <!-- título -->
 	<title>Museu Zoo</title>
-	<!-- css -->
-	<link rel="stylesheet" href="scripts/style.css" type="text/css" />
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <!-- css -->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
-  <!-- script do menu drop down-->
-    <script type="text/javascript">
+   <link href="style.css" rel="stylesheet" type="text/css" />
+   <!-- jquery -->
+   <%= javascript_include_tag "application" %>
+   <script type="text/javascript" src="js/jquery.js"></script>
+   <script type="text/javascript">
+   <!-- script do menu drop down-->
         $(document).ready(function () {
             $("#menu #menu2 li ul").hide();
             $("#menu #menu2 li").hover(
@@ -18,13 +20,18 @@
 				);
         });
     </script>
- </head>
-<body>
+	
+	
+<style type="text/css" media="screen">
 
-<div id="topo">
+</style>
+
+</head>
+<body>
+		<div id="topo">
     	<div id="box1">
-        	<div id="logo"><a href="index.php"><img src="imagens/museu-logo.png"/></a></div>
-        	<div id="usuario"><p align="right">Olá, Usuário! | Sair</p></div>
+        	<div id="logo"><a href="/exemplares"><img src="assets/museu-logo.png"/></a></div>
+        	<div id="usuario"><p align="right">Olá, Nome do Usuário! | <a href="/usuarios">Cadastrar Novo</a><a href="/logout">| Sair</a></p></div>
         </div>
     
     	<div id="menu">
@@ -32,23 +39,29 @@
             	<!-- item módulos do menu -->
             	<li>Módulos
                 	<ul>
-                        <li><a href="filo.php">Filo</a></li>
-                        <li><a href="classe.php">Classe</a></li>
-                        <li><a href="ordem.php">Ordem</a></li>
-                        <li><a href="familia.php">Família</a></li>
-                        <li><a href="genero.php">Gênero</a></li>
-                        <li><a href="exemplar.php">Exemplar</a></li>
+                        <li><a href="/filos">Filo</a></li>
+                        <li><a href="/clases">Classe</a></li>
+                        <li><a href="/ordems">Ordem</a></li>
+                        <li><a href="/familia">Família</a></li>
+                        <li><a href="/generos">Gênero</a></li>
+                        <li><a href="/exemplares">Exemplar</a></li>
                 	</ul>
             	</li>
             	<!-- intem relatórios do menu -->
-           	  <li>Relatórios</li>
+           	  <li><a href="/relatorios">Relatórios</a></li>
        	  </ul>
         </div>
         
     </div>
 
-
 <%= yield %>
+
+
+<br /><hr />
+<div id="uneb" align="center"><br /><br />Universidade do Estado da Bahia - UNEB<br />
+    :. Museu de Zoologia - um projeto de: <a href="/comum/equipe" target="_blank">Museu Virtual 3D </a>.:
+    <br />
+</div>
 
 </body>
 </html>
