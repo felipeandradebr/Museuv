@@ -1,42 +1,39 @@
-﻿    <h2>
-        Família</h2>
-    <form id="FormBusca">
-    Novo Família:
-    <input type="button" id="maisFamilia" value="+" onclick="javascript:window.location='/familia/new'" />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    Busca:
-    <input id="txtNome" type="text" />
-    <input id="btnBusca" type="button" value="OK" />
+﻿<div id="box">
+    
+    <h4 align="center"><hr />Familia<hr /></h4>
+    
+    <div style="width:35%; float:left">
+    	<input type="button" id="maisfamilium" value="Novo Familia" onclick="javascript:window.location='/familia/new'" />
+    </div>
+    <div style="width:65%; float:left"> 
+    	Busca:<input id="txtNome" type="text" />
+    	<input id="btnBusca" type="button" value="OK" />
+    </div>
     </form>
-    <br />
-    <table id="tb2" border="1" cellpadding="0" cellspacing="0" class="table_geral">
+    <br /><br /><br />
+    
+    <table id="tab" border="1px;">
         <thead>
             <tr>
-                <th width="225px">
-                    Descrição
-                </th>
-                <th width="225px">
-                    Ordem
-                </th>
-                <th width="225px">
-                    Data de Cadastro
-                </th>
+                <th>Familia</th>
+                <th align="center" style="width:100px">Editar</th>
+                <th align="center" style="width:100px">Excluir</th>
             </tr>
         </thead>
         <tbody>
-            <tr class="odd">
-			 <% @familia.each do |familium| %>
-                <td width="225px">
-                    <%= link_to familium.descricao, edit_familium_path(familium) %> 
-                </td>
-                <td width="225px">
-                    <%= familium.ordem_id %>
-                </td>
-                <td width="225px">
-                    <%= familium.status %>
-                </td>
+		<% @familia.each do |familium| %>
+            <tr>
+                <td><%= link_to familium.descricao, familium %></td>
+                    <td align="center" style="width:100px">
+						<%= link_to image_tag("/assets/editar.png", :size => "24x24") ,edit_familium_path(familium) %>
+                    </td>
+					
+						<td align="center" style="width:100px;">
+						<%= link_to image_tag("excluir.png", :size => "24x24"),familium, confirm: "Você esta certo disso?", method: :delete  %>  					
+						</td>
+					
+			<% end %>
             </tr>
-            <% end %>
         </tbody>
     </table>
-
+    </div>
