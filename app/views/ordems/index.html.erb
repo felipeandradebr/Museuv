@@ -1,0 +1,43 @@
+﻿<%= render :partial => "/comum/menu" %>
+    <h2>
+        Ordem</h2>
+    <form id="FormBusca">
+    Novo Ordem:
+    <input type="button" id="maisOrdem" value="+" onclick="javascript:window.location='/ordems/new'" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Busca:
+    <input id="txtNome" type="text" />
+    <input id="btnBusca" type="button" value="OK" />
+    </form>
+    <br />
+    <table id="tb2" border="1" cellpadding="0" cellspacing="0" class="table_geral">
+        <thead>
+            <tr>
+                <th width="225px">
+                    Descrição
+                </th>
+                <th width="225px">
+                    Classe
+                </th>
+                <th width="225px">
+                    Status
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="odd">
+			<% @ordems.each do |ordem| %>
+                <td width="225px">
+                 <%= link_to ordem.descricao, edit_ordem_path(ordem) %>  
+                </td>
+                <td width="225px">
+                    <%= ordem.clase_id %>
+                </td>
+                <td width="225px">
+                    <%= ordem.status %>
+                </td>
+            </tr>
+           <% end %>
+        </tbody>
+    </table>
+

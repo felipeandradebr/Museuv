@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome_vulgar: MyString
+  nome_cientifico: MyString
+  codigo_identificacao: MyString
+  local_origem: MyString
+  localizacao_geografica: MyString
+  identificador: MyString
+  data_coleta: 2012-06-08
+  data_chegada: 2012-06-08
+  foto_costas: 
+  foto_dorso: 
+  localizacao_exemplar: MyString
+  biografia: MyText
+  status: false
+
+two:
+  nome_vulgar: MyString
+  nome_cientifico: MyString
+  codigo_identificacao: MyString
+  local_origem: MyString
+  localizacao_geografica: MyString
+  identificador: MyString
+  data_coleta: 2012-06-08
+  data_chegada: 2012-06-08
+  foto_costas: 
+  foto_dorso: 
+  localizacao_exemplar: MyString
+  biografia: MyText
+  status: false

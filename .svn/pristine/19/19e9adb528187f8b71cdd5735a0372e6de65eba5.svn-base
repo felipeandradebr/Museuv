@@ -1,0 +1,31 @@
+﻿<%= form_for(@clase) do |f| %>
+  <% if @clase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clase.errors.count, "error") %> prohibited this clase from being saved:</h2>
+
+      <ul>
+      <% @clase.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descricao %><br />
+    <%= f.text_field :descricao %>
+  </div>
+
+  <div class="field">
+    <%= f.select :filo_id, Filo.find(:all).collect { |item| [item.descricao,item.id] } %>
+  </div>
+
+  <div class="field">
+	<%= f.radio_button 'status', '1', { :checked => true } %> Ativo
+	<%= f.radio_button 'status', '0' %> Inativo
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

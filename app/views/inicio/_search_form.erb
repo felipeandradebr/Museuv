@@ -1,0 +1,8 @@
+<%= form_tag(exemplars_path, :method => "get") do %>
+  Buscar: 
+  <!-- 
+	<%= label_tag(:with_nome_vulgar, "Busca") %> -->
+  <%= text_field_tag(:with_nome_vulgar) %>
+  <%= select_tag "busca", "<option>Exemplar</option><option>Filo</option><option>Classe</option><option>Família</option>".html_safe %>
+  <%= submit_tag("Bugfdfgsca") %>
+<% end %> 

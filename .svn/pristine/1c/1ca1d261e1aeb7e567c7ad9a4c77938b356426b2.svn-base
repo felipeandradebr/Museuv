@@ -1,0 +1,22 @@
+﻿<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Descrição:</b>
+  <%= @ordem.descricao %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @ordem.status %>
+</p>
+
+<p>
+  <b>Classe:</b>
+  <%= @ordem.clase_id %>
+</p>
+
+
+
+
+<%= link_to 'Editar', edit_ordem_path(@ordem) %> |
+<%= link_to 'Voltar', ordems_path %>

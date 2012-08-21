@@ -1,0 +1,43 @@
+﻿<%= render :partial => "/comum/menu" %>
+    <h2>
+        Família</h2>
+    <form id="FormBusca">
+    Novo Família:
+    <input type="button" id="maisFamilia" value="+" onclick="javascript:window.location='/familia/new'" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Busca:
+    <input id="txtNome" type="text" />
+    <input id="btnBusca" type="button" value="OK" />
+    </form>
+    <br />
+    <table id="tb2" border="1" cellpadding="0" cellspacing="0" class="table_geral">
+        <thead>
+            <tr>
+                <th width="225px">
+                    Descrição
+                </th>
+                <th width="225px">
+                    Ordem
+                </th>
+                <th width="225px">
+                    Data de Cadastro
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="odd">
+			 <% @familia.each do |familium| %>
+                <td width="225px">
+                    <%= link_to familium.descricao, edit_familium_path(familium) %> 
+                </td>
+                <td width="225px">
+                    <%= familium.ordem_id %>
+                </td>
+                <td width="225px">
+                    <%= familium.status %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+

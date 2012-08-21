@@ -1,0 +1,13 @@
+﻿<h1>Listagem de Usuários</h1>
+
+<p>
+<%= link_to 'Novo Usuário', new_usuario_path %>
+</p>
+
+<br>
+<% for usuario in @usuarios %>
+<h2>
+	<%= link_to usuario.nome, edit_usuario_path(usuario) %>
+</h2>
+
+<% end %>

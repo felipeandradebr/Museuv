@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  descricao: MyString
+  status: false
+  genero_id: 1
+  genero: 
+
+two:
+  descricao: MyString
+  status: false
+  genero_id: 1
+  genero: 

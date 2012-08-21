@@ -1,0 +1,44 @@
+﻿<%= render :partial => "/comum/menu" %>
+    <h2>
+        Classe</h2>
+    <form id="FormBusca">
+    Novo Classe:
+    <input type="button" id="maisClasse" value="+" onclick="javascript:window.location='/clases/new'" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Busca:
+    <input id="txtNome" type="text" />
+    <input id="btnBusca" type="button" value="OK" />
+    </form>
+    <br />
+  
+    <table id="tb2" border="1" cellpadding="0" cellspacing="0" class="table_geral">
+        <thead>
+            <tr>
+                <th width="225px">
+                    Descrição
+                </th>
+                <th width="225px">
+                    Filo
+                </th>
+                <th width="225px">
+                    Status
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="odd">
+			<% @clases.each do |clase| %>
+                <td width="225px">
+                    <%= link_to clase.descricao, edit_clase_path(clase) %> 
+                </td>
+                <td width="225px">
+                    <%= clase.filo_id %>
+                </td>
+                <td width="225px">
+                    <%= clase.status %>
+                </td>
+            </tr>
+           <% end %>
+        </tbody>
+    </table>
+

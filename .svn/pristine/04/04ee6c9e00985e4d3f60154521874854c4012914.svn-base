@@ -1,0 +1,21 @@
+﻿<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Descrição:</b>
+  <%= @genero.descricao %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @genero.status %>
+</p>
+
+<p>
+  <b>Família:</b>
+  <%= @genero.familia_id %>
+</p>
+
+
+
+<%= link_to 'Editar', edit_genero_path(@genero) %> |
+<%= link_to 'Voltar', generos_path %>

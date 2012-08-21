@@ -1,0 +1,3 @@
+﻿<%= render :partial => "/comum/menu" %>
+<h2>Cadastrar Gênero</h2>
+<%= render 'form' %>

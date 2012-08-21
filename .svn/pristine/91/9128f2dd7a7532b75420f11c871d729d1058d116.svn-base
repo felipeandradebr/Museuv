@@ -1,0 +1,45 @@
+<%= render :partial => "comum/menu" %> 
+<h2>Exemplar</h2>
+    <form id="FormBusca">
+    Novo Exemplar:
+    <input type="button" id="maisClasse" value="+" onclick="javascript:window.location='/exemplares/new'" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= render :partial => "inicio/search_form" %> 
+    </form>       
+    <br />
+    <table id="tb2" border="1px" cellpadding="0" cellspacing="0" class="table_geral">
+        <thead>
+            <tr>
+                <th>
+                    Exemplar
+                </th>
+                <th>
+                    Localização
+                </th>
+                <th>
+                    Filo
+                </th>
+                <th>
+                    Data de Chegada
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="odd">
+			<% @exemplares.each do |exemplare| %>
+                <td>
+                    <%= link_to exemplare.nome_vulgar, exemplare %>
+                </td>
+                <td>
+                    <%= exemplare.localizacao_geografica %>
+                </td>
+                <td>
+                    <%= exemplare.filo_id %>
+                </td>
+                <td>
+                    <%= exemplare.data_da_chegada %>
+                </td>
+            </tr>
+			<% end %>
+        </tbody>
+    </table>

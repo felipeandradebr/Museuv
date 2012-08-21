@@ -1,0 +1,5 @@
+﻿<h1>Nova Espécie</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Voltar', especs_path %>

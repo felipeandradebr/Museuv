@@ -1,0 +1,31 @@
+﻿<%= form_for(@espec) do |f| %>
+  <% if @espec.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@espec.errors.count, "erro") %> - impedido de ser salvo:</h2>
+
+      <ul>
+      <% @espec.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Descrição" %><br />
+    <%= f.text_field :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.radio_button 'status', '1', { :checked => true } %> Ativo
+	<%= f.radio_button 'status', '0' %> Inativo
+  </div>
+ 
+  <div class="field">
+    <%= f.label :genero %><br />
+    <%= f.select :genero_id, Genero.find(:all).collect { |item| [item.descricao,item.id] },{:include_blank => 'Não Identificado'} %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Salvar"%>
+  </div>
+<% end %>

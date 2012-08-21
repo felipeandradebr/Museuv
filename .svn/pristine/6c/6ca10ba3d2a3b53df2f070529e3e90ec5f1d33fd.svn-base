@@ -1,0 +1,6 @@
+<h1>Edição de Filo</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Mostrar', @filo %> |
+<%= link_to 'Voltar', filos_path %>

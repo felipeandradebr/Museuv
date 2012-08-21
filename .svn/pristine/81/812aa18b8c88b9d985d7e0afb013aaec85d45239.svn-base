@@ -1,0 +1,96 @@
+﻿<%= form_for(@exemplare) do |f| %>
+  <% if @exemplare.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exemplare.errors.count, "erro") %> - Falha ao salvar Exemplar:</h2>
+
+      <ul>
+      <% @exemplare.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome_vulgar %><br />
+    <%= f.text_field :nome_vulgar %>
+  </div>
+  <div class="field">
+    <%= f.label "Nome Científico" %><br />
+    <%= f.text_field :nome_cientifico %>
+  </div>
+  <div class="field">
+    <%= f.label "Código de Identificação" %><br />
+    <%= f.text_field :codigo_identificacao %>
+  </div>
+  <div class="field">
+    <%= f.label :local_de_origem %><br />
+    <%= f.text_field :local_origem %>
+  </div>
+  <div class="field">
+    <%= f.label "Localização Geográfica" %><br />
+    <%= f.text_field :localizacao_geografica %>
+  </div>
+  <div class="field">
+    <%= f.label :identificador %><br />
+    <%= f.text_field :identificador %>
+  </div>
+  <div class="field">
+    <%= f.label "Localização do Exemplar" %><br />
+    <%= f.text_field :localizacao_exemplar %>
+  </div>
+  <div class="field">
+    <%= f.label :biografia %><br />
+    <%= f.text_area :biografia %>
+  </div>
+  <div class="field">
+    <%= f.label :data_coleta %><br />
+    <%= f.date_select :data_coleta %>
+  </div>
+  <div class="field">
+    <%= f.label :data_chegada %><br />
+    <%= f.date_select :data_chegada %>
+  </div>
+  <div class="field">
+    <%= f.label :filo %><br />
+    <%= f.select :filo_id, Filo.find(:all).collect { |item| [item.descricao,item.id] },{:include_blank => 'Não Identificado'} %>
+  </div>
+  <div class="field">
+    <%= f.label "Classe" %><br />
+    <%= f.select :clase_id, Clase.find(:all).collect { |item| [item.descricao,item.id] },{:include_blank => 'Não Identificado'} %>
+  </div>
+  <div class="field">
+    <%= f.label :ordem %><br />
+    <%= f.select :ordem_id, Ordem.find(:all).collect { |item| [item.descricao,item.id] },{:include_blank => 'Não Identificado'} %>
+  </div>
+  <div class="field">
+    <%= f.label "Família" %><br />
+    <%= f.select :familia_id, Familium.find(:all).collect { |item| [item.descricao,item.id] },{:include_blank => 'Não Identificado'} %>
+  </div>
+  <div class="field">
+    <%= f.label "Género" %><br />
+    <%= f.select :genero_id, Genero.find(:all).collect { |item| [item.descricao,item.id] },{:include_blank => 'Não Identificado'} %>
+  </div>
+  <div class="field">
+    <%= f.label "Espécie" %><br />
+    <%= f.select :espec_id, Espec.find(:all).collect { |item| [item.descricao,item.id] },{:include_blank => 'Não Identificado'} %>
+  </div>
+  
+    <%= f.fields_for :imagems do |imagem_fields| %>
+    <% if imagem_fields.object.new_record? %>
+	  <p>
+	    <%= imagem_fields.file_field :foto %>
+      </p>
+    <% end %>
+  <% end %>
+  
+  <div class="field">
+	<%= f.label :status %><br />
+	<%= f.radio_button 'status', '1', { :checked => true } %> Ativo
+	<%= f.radio_button 'status', '0' %> Inativo
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Salvar"%>
+  </div>
+<% end %>

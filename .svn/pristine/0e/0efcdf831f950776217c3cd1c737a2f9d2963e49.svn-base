@@ -1,0 +1,26 @@
+﻿<%= form_for(@filo) do |f| %>
+  <% if @filo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@filo.errors.count, "erro") %> - falha ao salvar Filo:</h2>
+
+      <ul>
+      <% @filo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Descrição" %><br />
+    <%= f.text_field :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.radio_button 'status', '1', { :checked => true } %> Ativo
+	<%= f.radio_button 'status', '0' %> Inativo
+  </div>
+  <div class="actions">
+    <%= f.submit "Salvar"%>
+  </div>
+<% end %>

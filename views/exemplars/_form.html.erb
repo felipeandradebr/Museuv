@@ -1,0 +1,70 @@
+﻿<%= form_for(@exemplar) do |f| %>
+  <% if @exemplar.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exemplar.errors.count, "error") %> prohibited this exemplar from being saved:</h2>
+
+      <ul>
+      <% @exemplar.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome_vulgar %><br />
+    <%= f.text_field :nome_vulgar %>
+  </div>
+  <div class="field">
+    <%= f.label :nome_cientifico %><br />
+    <%= f.text_field :nome_cientifico %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :codigo_identificacao %><br />
+    <%= f.text_field :codigo_identificacao %>
+  </div>
+  <div class="field">
+    <%= f.label :local_origem %><br />
+    <%= f.text_field :local_origem %>
+  </div>
+  <div class="field">
+    <%= f.label :localizacao_geografica %><br />
+    <%= f.text_field :localizacao_geografica %>
+  </div>
+  <div class="field">
+    <%= f.label :identificador %><br />
+    <%= f.text_field :identificador %>
+  </div>
+  <div class="field">
+    <%= f.label :data_coleta %><br />
+    <%= f.date_select :data_coleta, :order => [:day, :month, :year]%>
+  </div>
+  <div class="field">
+    <%= f.label :data_chegada %><br />
+    <%= f.date_select :data_chegada, :order => [:day, :month, :year]%>
+  </div>
+  <div class="field">
+    <%= f.label :foto_costas %><br />
+    <%= f.text_field :foto_costas %>
+  </div>
+  <div class="field">
+    <%= f.label :foto_dorso %><br />
+    <%= f.text_field :foto_dorso %>
+  </div>
+  <div class="field">
+    <%= f.label :localizacao_exemplar %><br />
+    <%= f.text_field :localizacao_exemplar %>
+  </div>
+  <div class="field">
+    <%= f.label :biografia %><br />
+    <%= f.text_area :biografia %>
+  </div>
+  <div class="field">
+	<%= f.radio_button 'status', '1', { :checked => true } %> Ativo
+	<%= f.radio_button 'status', '0' %> Inativo
+  </div>
+  <div class="actions">
+    <%= f.submit "Salvar"%>
+  </div>
+<% end %>

@@ -1,0 +1,22 @@
+﻿<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Descrição:</b>
+  <%= @espec.descricao %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @espec.status %>
+</p>
+
+<p>
+  <b>Género:</b>
+  <%= @espec.genero_id %>
+</p>
+
+
+
+
+<%= link_to 'Editar', edit_espec_path(@espec) %> |
+<%= link_to 'Mostrar', especs_path %>

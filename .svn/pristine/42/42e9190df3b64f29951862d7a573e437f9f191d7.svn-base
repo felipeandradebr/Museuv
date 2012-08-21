@@ -1,0 +1,61 @@
+﻿<%= form_for(@espec) do |f| %>
+  <% if @espec.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@espec.errors.count, "erro") %> - impedido de ser salvo:</h2>
+
+      <ul>
+      <% @espec.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<form id="FormCadastrarGênero">
+    <table border="0" cellpadding="10" cellspacing="0" class="table_geral">
+        <tr>
+            <td>
+                Descrição:
+            </td>
+            <td>
+                <%= f.text_field :descricao %>
+            </td>
+            <td style="width: 800px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Gênero:
+            </td>
+            <td>
+              <%= f.select :genero_id, Genero.find(:all).collect { |item| [item.descricao,item.id] },{:include_blank => "Não Identificado"} %>
+            </td>
+            <td style="width: 800px;">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Situação:
+            </td>
+            <td>
+                <%= f.radio_button "status", "1", { :checked => true } %> Ativo
+				<%= f.radio_button "status", "0" %> Inativo
+            </td>
+            <td style="width: 800px;">
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table border="0" cellpadding="10" cellspacing="0" class="table_geral">
+        <tr>
+            <td>
+                <%= f.submit "Cadastrar"%>
+            </td>
+            <td>
+                <input id="btnCancelar" type="button" value="Cancelar" onclick="javascript:window.location='/especs'" />
+            </td>
+            <td style="width: 800px;">
+            </td>
+        </tr>
+    </table>
+    </form>
+	<% end %>

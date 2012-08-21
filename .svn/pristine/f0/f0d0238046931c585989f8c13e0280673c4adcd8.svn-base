@@ -1,0 +1,30 @@
+﻿<a href="../exemplares">Página Inicial</a>
+<a href="logout">Sair</a>
+<br><br><br>
+
+<h1>Espécies</h1>
+
+<table>
+  <tr>
+    <th>Descrição</th>
+    <th>Status</th>
+    <th>Género</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @especs.each do |espec| %>
+  <tr>
+    <td><%= espec.descricao %></td>
+    <td><%= espec.status %></td>
+    <td><%= espec.genero_id %></td>
+    <td><%= link_to 'Mostrar', espec %></td>
+    <td><%= link_to 'Editar', edit_espec_path(espec) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nova Espécie', new_espec_path %>

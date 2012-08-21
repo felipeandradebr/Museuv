@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome vulgar:</b>
+  <%= @exemplar.nome_vulgar %>
+</p>
+
+<p>
+  <b>Nome cientifico:</b>
+  <%= @exemplar.nome_cientifico %>
+</p>
+
+<p>
+  <b>Codigo identificacao:</b>
+  <%= @exemplar.codigo_identificacao %>
+</p>
+
+<p>
+  <b>Local origem:</b>
+  <%= @exemplar.local_origem %>
+</p>
+
+<p>
+  <b>Localizacao geografica:</b>
+  <%= @exemplar.localizacao_geografica %>
+</p>
+
+<p>
+  <b>Identificador:</b>
+  <%= @exemplar.identificador %>
+</p>
+
+<p>
+  <b>Data coleta:</b>
+  <%= @exemplar.data_coleta %>
+</p>
+
+<p>
+  <b>Data chegada:</b>
+  <%= @exemplar.data_chegada %>
+</p>
+
+<p>
+  <b>Foto costas:</b>
+  <%= @exemplar.foto_costas %>
+</p>
+
+<p>
+  <b>Foto dorso:</b>
+  <%= @exemplar.foto_dorso %>
+</p>
+
+<p>
+  <b>Localizacao exemplar:</b>
+  <%= @exemplar.localizacao_exemplar %>
+</p>
+
+<p>
+  <b>Biografia:</b>
+  <%= @exemplar.biografia %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @exemplar.status %>
+</p>
+
+
+<%= link_to 'Editar', edit_exemplar_path(@exemplar) %> |
+<%= link_to 'Voltar', exemplars_path %>

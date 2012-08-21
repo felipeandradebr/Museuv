@@ -1,0 +1,22 @@
+﻿<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Descrição:</b>
+  <%= @familium.descricao %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @familium.status %>
+</p>
+
+<p>
+  <b>Ordem:</b>
+  <%= @familium.ordem_id %>
+</p>
+
+
+
+
+<%= link_to 'Editar', edit_familium_path(@familium) %> |
+<%= link_to 'Mostrar', familia_path %>
