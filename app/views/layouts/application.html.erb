@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html>
 <head>
-  <!-- título -->
+  <!-- tÃ­tulo -->
 	<title>Museu Zoo</title>
   <!-- css -->
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -31,24 +31,24 @@
 		<div id="topo">
     	<div id="box1">
         	<div id="logo"><a href="/exemplares"><img src="assets/museu-logo.png"/></a></div>
-        	<div id="usuario"><p align="right">Olá, Nome do Usuário! | <a href="/usuarios">Cadastrar Novo</a><a href="/logout">| Sair</a></p></div>
+        	<div id="usuario"><p align="right">OlÃ¡, Nome do UsuÃ¡rio! | <a href="/usuarios">Cadastrar Novo</a><a href="/logout">| Sair</a></p></div>
         </div>
     
     	<div id="menu">
         	<ul id="menu2">
-            	<!-- item módulos do menu -->
-            	<li>Módulos
+            	<!-- item mÃ³dulos do menu -->
+            	<li>MÃ³dulos
                 	<ul>
                         <li><a href="/filos">Filo</a></li>
                         <li><a href="/clases">Classe</a></li>
                         <li><a href="/ordems">Ordem</a></li>
-                        <li><a href="/familia">Família</a></li>
-                        <li><a href="/generos">Gênero</a></li>
+                        <li><a href="/familia">FamÃ­lia</a></li>
+                        <li><a href="/generos">GÃªnero</a></li>
                         <li><a href="/exemplares">Exemplar</a></li>
                 	</ul>
             	</li>
-            	<!-- intem relatórios do menu -->
-           	  <li><a href="/relatorios">Relatórios</a></li>
+            	<!-- intem relatÃ³rios do menu -->
+           	  <li><a href="/relatorios">RelatÃ³rios</a></li>
        	  </ul>
         </div>
         
@@ -57,7 +57,11 @@
 <%= yield %>
 
 
-
+<br /><hr />
+<div id="uneb" align="center"><br /><br />Universidade do Estado da Bahia - UNEB<br />
+    :. Museu de Zoologia - um projeto de: <a href="/comum/equipe" target="_blank">Museu Virtual 3D </a>.:
+    <br />
+</div>
 
 </body>
 </html>
