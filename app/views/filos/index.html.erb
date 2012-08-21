@@ -1,36 +1,39 @@
-﻿
-    <h2>Filo</h2>
-    <form id="FormBusca">
-    Novo Filo:
-    <input type="button" id="maisFilo" value="+" onclick="javascript:window.location='/filos/new'" />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    Busca:
-    <input id="txtNome" type="text" />
-    <input id="btnBusca" type="button" value="OK" />
+﻿<div id="box">
+    
+    <h4 align="center"><hr />Filo<hr /></h4>
+    
+    <div style="width:35%; float:left">
+    	<input type="button" id="maisFilo" value="Novo Filo" onclick="javascript:window.location='/filos/new'" />
+    </div>
+    <div style="width:65%; float:left"> 
+    	Busca:<input id="txtNome" type="text" />
+    	<input id="btnBusca" type="button" value="OK" />
+    </div>
     </form>
-    <br />
-
-    <table id="tb2" border="1" cellpadding="0" cellspacing="0" class="table_geral">
+    <br /><br /><br />
+    
+    <table id="tab" border="1px;">
         <thead>
             <tr>
-                <th width="225px">
-                    Descrição
-                </th>
-                <th width="225px">
-                    Status
-                </th>
+                <th>Filo</th>
+                <th align="center" style="width:100px">Editar</th>
+                <th align="center" style="width:100px">Excluir</th>
             </tr>
         </thead>
         <tbody>
-            <tr class="odd">
-			<% @filos.each do |filo| %>
-                <td width="225px">
-                    <%= link_to filo.descricao, edit_filo_path(filo) %>
-                </td>
-                <td width="225px">
-                    <%= filo.status %>
-                </td>
-            </tr>
+		<% @filos.each do |filo| %>
+            <tr>
+                <td><%= link_to filo.descricao, filo %></td>
+                    <td align="center" style="width:100px">
+						<%= link_to image_tag("/assets/editar.png", :size => "24x24") ,edit_filo_path(filo) %>
+                    </td>
+					
+						<td align="center" style="width:100px;">
+						<%= link_to image_tag("excluir.png", :size => "24x24"),filo, confirm: "Você esta certo disso?", method: :delete  %>  					
+						</td>
+					
 			<% end %>
+            </tr>
         </tbody>
     </table>
+    </div>

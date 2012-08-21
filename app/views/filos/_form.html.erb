@@ -1,7 +1,8 @@
-﻿	<%= form_for(@filo) do |f| %>
+﻿  <div id="box">
+	<%= form_for(@filo) do |f| %>
 		<% if @filo.errors.any? %>
 			<div id="error_explanation">
-			<h2><%= pluralize(@filo.errors.count, "error") %> prohibited this filo from being saved:</h2>
+			<h2><%= pluralize(@filo.errors.count, "erro") %> este filo não pode ser salvo:</h2>
 
 			<ul>
 				<% @filo.errors.full_messages.each do |msg| %>
@@ -9,45 +10,28 @@
 				<% end %>
 			</ul>
 			</div>
-  <% end %>
-    <form id="FormCadastrarFilo">
-    <table border="0" cellpadding="10" cellspacing="0" class="table_geral">
-        <tr>
-            <td>
-                Descrição:
-            </td>
-            <td>
-                <%= f.text_field :descricao %>
-            </td>
-            <td style="width: 800px;">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Situação:
-            </td>
-            <td>
-                <%= f.radio_button "status", "1", { :checked => true } %> Ativo
-				<%= f.radio_button "status", "0" %> Inativo
-            </td>
-            <td style="width: 800px;">
-            </td>
-        </tr>
-    </table>
-    <br />
-    <table border="0" cellpadding="10" cellspacing="0" class="table_geral">
-        <tr>
-            <td>
-                <%= f.submit "Cadastrar" %>
-            </td>
-            <td>
-                <input id="btnCancelar" type="button" value="Cancelar" onclick="javascript:window.location='/filos'"/>
-            </td>
-            <td style="width: 800px;">
-            </td>
-        </tr>
-    </table>
-    </form>
-	<% end %>
-</body>
-</html>
+	<% end %>  
+    		<form id="CadastrarFilo">
+    			<table class="table_geral">
+        			<tr>
+            			<td>Filo:</td>
+            			<td><%= f.text_field :descricao %></td>
+            			<td style="width:800px;"></td>
+        			</tr>
+        			<tr>
+                    	<td></td>
+                        <td></td>
+            			<td style="width: 800px;"></td>
+        			</tr>
+    			</table>
+    			<br />
+    			<table class="table_geral">
+        			<tr>
+            			<td><%= f.submit "Cadastrar" %></td>
+            			<td><input id="btnCancelar" type="button" value="Cancelar" onclick="javascript:window.location='/filos'"/></td>
+            			<td style="width: 800px;"></td>
+        			</tr>
+    			</table>
+    		</form>
+    </div>
+<% end %>
