@@ -2,17 +2,18 @@
 /* CSS Document 2A74BC */
 
 body {
-	background:#cbe4bd url(../imagens/fundo.jpg) repeat-x;
+	background: #cbe4bd url("/assets/fundo.jpg") repeat-x;
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:16px;
 	}
 
-/* ----- BOX ----- */
+/* ----- BOX ------- */
 #box{
 	width:900px;
-	height:380px;
+	height:100%;
 	margin-right:auto;
 	margin-left:auto;
+	text-align:center;
 	}
 
 /* ---- TOPO ---- */
@@ -33,7 +34,10 @@ body {
 	width:75%; 
 	padding-top:60px;	
 	}
-
+	
+#usuario a {
+	text-decoration: none;
+	}
 /* ---- CONT ---- */
 #cont{
 	width:900px;
@@ -49,8 +53,10 @@ body {
     height: 35px;
 	margin-right:auto;
 	margin-left:auto;
+	color: white;
 }
 
+	
 #menu li
 {
     height: 27px;
@@ -120,15 +126,15 @@ li > ul
     top: 35px;
 }
 
-/* ---- TABELAS ---- */
+/* tables */
 
 
 #tab
 {
 width:900px;	
 border-collapse: collapse;
-border: 1px solid #009966;
-color: #000;
+    border: 1px solid #009966;
+    color: #000;    
 }
 
 #tab-login{
@@ -142,7 +148,8 @@ margin-left:auto;
 }
 
 
- table thead tr th
+
+table thead tr th
 {
    text-align:center;
    height: 20px;
@@ -160,7 +167,7 @@ tbody tr
 
 td, th
 {
-    padding: 6px 6px 6px 6px;
+    padding: 3px 3px 3px 3px;
     line-height: 1.3em;
 }
 th
@@ -179,4 +186,37 @@ thead th
     height: 30px;
 }
 
+#uneb{
+	clear: both;
+	background:url("/assets/rodape.fw.png");
+	font-size:12px; 
+	font-family: Verdana, Geneva, sans-serif; 
+	width:900px; 
+	height:90px;
+	color:#000;
+	display:table;
+	margin:0 auto;
+	position:relative;
+	bottom: 0;
+	}
+	
+	}
+
+#logo{
+	background:#9C0;
+	float:right;
+	width:35%;
+	height:100%;
+	}
+
+hr{ 
+	width: 900px;
+	}
+	
+
+a{  
+	text-decoration:none;
+	color:#000066;
+	}
+	
 
