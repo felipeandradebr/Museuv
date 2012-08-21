@@ -1,129 +1,54 @@
-﻿body
-{
-    width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-label
-{
-    background-color: #35cc9c;
-    color: White;
-    font-weight: bold;
+@charset "utf-8";
+/* CSS Document 2A74BC */
+
+body {
+	background:#cbe4bd url(../imagens/fundo.jpg) repeat-x;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:16px;
+	}
+
+/* ----- BOX ----- */
+#box{
+	width:900px;
+	height:380px;
+	margin-right:auto;
+	margin-left:auto;
+	}
+
+/* ---- TOPO ---- */
+#box1{
+	width:900px;
+	height:100px;
+	margin-right:auto;
+	margin-left:auto;
 }
 
-textarea {
-	height:40px;
-	width: 210px;
-}
+#logo{
+	float:left; 
+	width:25%;	
+	}
 
+#usuario{
+	float:left; 
+	width:75%; 
+	padding-top:60px;	
+	}
 
-/* login */
-.login
-{
-    margin: auto;
-    height: 100px;
-    width: 300px;
-    padding-top: 200px;
+/* ---- CONT ---- */
+#cont{
+	width:900px;
+	height:auto;
 }
-
-/* tables */
-.table_geral
-{
-    width: 900px;
-}
-table
-{
-    border-collapse: collapse;
-    border: 1px solid #839E99;
-    font: .9em/1.2em Georgia, "Times New Roman" , Times, serif;
-    color: #033;
-}
-
-#tb1
-{
-    border: none;
-    background: none;
-}
-
-table thead tr th
-{
-   text-align:center;
-   height: 20px;
-}
-
-
-
-tbody th
-{
-    background: white;
-}
-
-tbody tr
-{
-    background: white;
-}
-
-caption
-{
-    font-size: 1.3em;
-    font-weight: bold;
-    text-align: left;
-    padding: 1em 4px;
-}
-td, th
-{
-    padding: 3px 3px 3px 3px;
-    line-height: 1.3em;
-}
-th
-{
-    background: #839E99;
-    color: #fff;
-    font-size: 14px;
-    text-align: left;
-    padding-right: .5em;
-    vertical-align: top;
-    background: white;
-}
-thead th
-{
-    background: #35cc9c; /*text-align: center;*/
-    height: 30px;
-}
-
-td a, td a:link
-{
-    color: #325C91;
-}
-td a:visited
-{
-    color: #466C8E;
-}
-td a:hover, td a:focus
-{
-    color: #1E4C94;
-}
-th a, td a:active
-{
-    color: #fff;
-}
-tfoot th, tfoot td
-{
-    background: #2C5755;
-    color: #fff;
-}
-th + td
-{
-    padding-left: .5em;
-}
-
-/*estilo para o menu*/
+	
+/* ---- MENU ---- */
 
 #menu
 {
-    background: #35cc9c;
+    background: #009966;
     width: 900px;
     height: 35px;
+	margin-right:auto;
+	margin-left:auto;
 }
 
 #menu li
@@ -150,27 +75,27 @@ li
     position: relative;
     text-decoration: none;
     font-weight: bold;
-    background: #35cc9c;
-    color: white;
+    background: #009966; /* cor antiga 009966*/
+	color: #FFF;
 }
 
 li:hover
 {
-    background-color: white;
-    color: #35cc9c;
+    background-color:#FFF;
+    color: #009966;
     text-decoration: none;
     height: 40px;
 }
 
 ul li a
 {
-    color: white;
+    color:#000;
     text-decoration: none;
 }
 
 a:hover
 {
-    color: #35cc9c;
+    color: #000;
     background: white;
 }
 
@@ -194,3 +119,64 @@ li > ul
     left: -40px;
     top: 35px;
 }
+
+/* ---- TABELAS ---- */
+
+
+#tab
+{
+width:900px;	
+border-collapse: collapse;
+border: 1px solid #009966;
+color: #000;
+}
+
+#tab-login{
+width:400px;
+border-collapse:collapse;
+border:1px solid #009966;
+margin-top:150px;
+margin-right:auto;
+margin-left:auto;
+	
+}
+
+
+ table thead tr th
+{
+   text-align:center;
+   height: 20px;
+}
+
+tbody th
+{
+    background: white;
+}
+
+tbody tr
+{
+    background: white;
+}
+
+td, th
+{
+    padding: 6px 6px 6px 6px;
+    line-height: 1.3em;
+}
+th
+{
+    background: #839E99;
+    color: #fff;
+    font-size: 14px;
+    text-align: left;
+    padding-right: .5em;
+    vertical-align: top;
+    background: white;
+}
+thead th
+{
+    background: #009966;
+    height: 30px;
+}
+
+
