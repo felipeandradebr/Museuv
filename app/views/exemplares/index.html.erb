@@ -1,44 +1,48 @@
-<h2>Exemplar</h2>
-    <form id="FormBusca">
-    Novo Exemplar:
-    <input type="button" id="maisClasse" value="+" onclick="javascript:window.location='/exemplares/new'" />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <%= render :partial => "inicio/search_form" %> 
-    </form>       
-    <br />
-    <table id="tb2" border="1px" cellpadding="0" cellspacing="0" class="table_geral">
+    <div id="box">
+    <h4 align="center"><hr />Exemplar<hr /></h4>
+    
+    <form>
+    <div style="width:35%; float:left">
+    	<input type="button" id="maisExemplar" value="Novo Exemplar" onclick="javascript:window.location='/exemplares/new'" />
+    </div>
+    <div style="width:65%; float:left"> 
+    	Busca:<input id="txtNome" type="text" />
+    	<input id="btnBusca" type="button" value="OK" />
+    </div>
+    </form>
+    <br /><br /><br />
+    
+    <table id="tab" border="1px;">
         <thead>
             <tr>
-                <th>
-                    Exemplar
-                </th>
-                <th>
-                    Localização
-                </th>
-                <th>
-                    Filo
-                </th>
-                <th>
-                    Data de Chegada
-                </th>
+                <th width="350px">Nome Vulgar</th>
+                <th>Espécie</th>
+                <th align="center" style="width:100px">Editar</th>
+                <th align="center" style="width:100px">Excluir</th>
             </tr>
         </thead>
         <tbody>
             <tr class="odd">
 			<% @exemplares.each do |exemplare| %>
-                <td>
-                    <%= link_to exemplare.nome_vulgar, exemplare %>
-                </td>
-                <td>
-                    <%= exemplare.localizacao_geografica %>
-                </td>
-                <td>
-                    <%= exemplare.filo_id %>
-                </td>
-                <td>
-                    <%= exemplare.data_chegada %>
-                </td>
+                <td><%= link_to exemplare.nome_vulgar, exemplare %></td>
+                <td><%= exemplare.nome_cientifico %></td>
+                 <td align="center" style="width:100px">
+						<%= link_to image_tag("/assets/editar.png", :size => "24x24") ,edit_exemplare_path(exemplare) %>
+                    </td>
+					
+						<td align="center" style="width:100px;">
+						<%= link_to image_tag("excluir.png", :size => "24x24"),exemplare, confirm: "Você esta certo disso?", method: :delete  %>  					
+						</td>
             </tr>
-			<% end %>
         </tbody>
+		<% end %>
     </table>
+	<br />
+	<div class="digg_pagination">
+    <div clas="page_info">
+      <%= page_entries_info @exemplares %>
+    </div>
+    <%= will_paginate @exemplares, :container => false %>
+  </div>
+	 <div id="clear"></div>
+    </div>
