@@ -1,77 +1,50 @@
-﻿ <h2>Cadastar Usuário</h2>
-		<%= form_for(@usuario) do |f| %>
-    <table id="tb2" border="1px" cellpadding="0" cellspacing="0" class="table_geral">
-        <tbody>
-            <tr class="odd">
-                <td width="118">
-                    Nome
-                </td>
-                <td width="776">
-					<%= f.text_field :nome%>
-                </td>
+﻿    <div id="box">
+	<%= form_for(@usuario) do |f| %>
+    	<h4 align="center"><hr />Cadastrar Usuário<hr /></h4>
+    	<table cellspacing="0" id="tab">
+        
+            <tr>
+                <td width="118">Nome</td>
+                <td width="776"><%= f.text_field :nome%></td>
+                <td></td>
             </tr>
             <tr>
-                <td>
-                    Função
-                </td>
-                <td>
-                    <%= f.text_field :funcao%>
-                </td>
-            </tr>
-            <tr class="odd">
-                <td>
-                    Email
-                </td>
-                <td>
-                    <%= f.text_field :email %>
-                </td>
-            </tr>
-            <tr class="odd">
-                <td>
-                    Login
-                </td>
-                <td>
-                    <%= f.text_field :usuario%>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Senha
-                </td>
-                <td>
-                    <%= f.password_field :senha%>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Confirmar Senha
-                </td>
-                <td>
-                    <%= f.password_field :senha_confirmation %>
-                </td>
+                <td>Função</td>
+                <td> <%= f.text_field :funcao %></td>
+                <td></td>    
             </tr>
 			<tr>
-                <td>
-                    Status
-                </td>
-                <td>
-                    <%= f.radio_button "status", "1", { :checked => true } %> Ativo
-					<%= f.radio_button "status", "0" %> Inativo
-                </td>
-            </tr>	
-        </tbody>
-    </table>
-    <br />
-    <table border="0" cellpadding="10" cellspacing="0" class="table_geral">
+                <td>E-mail</td>
+                <td><%= f.text_field :email %></td>
+                <td></td>
+            </tr>
+            
+                <td>Login</td>
+                <td><%= f.text_field :usuario%></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Senha</td>
+                <td><%= f.password_field :senha%></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Confirmar Senha</td>
+                <td><%= f.password_field :senha_confirmation %></td>
+                <td></td>
+            </tr>
+        	<tr>
+            	<td></td>
+                <td></td>
+                <td></td>
+            </tr>
         <tr>
-            <td>
-                <%= f.submit "Cadastrar" %>
+            <td><%= f.submit "Salvar" %>
             </td>
 			<td>
                 <input type="button" id="btnCancelar" value="Cancelar" onclick="javascript:window.location='/usuarios'" />
-            </td>
-            <td style="width: 800px;">
-            </td>
+            <td style="width: 800px;"></td>
         </tr>
     </table>
+	</div>
 <% end %>
