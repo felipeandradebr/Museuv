@@ -6,7 +6,7 @@ class ClasesController < ApplicationController
   # GET /clases.json
   def index
     @clases = Clase.all
-
+	@filos = Filo.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @clases }
