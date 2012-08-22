@@ -17,6 +17,8 @@ class OrdemsController < ApplicationController
   # GET /ordems/1.json
   def show
     @ordem = Ordem.find(params[:id])
+	@clases = Clase.all
+	@filos = Filo.all
 
     respond_to do |format|
       format.html # show.html.erb
