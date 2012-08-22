@@ -23,6 +23,8 @@ Museum::Application.routes.draw do
   resource :session
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
+  
+  get "page/:id" => "page#index", :as => :page
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
