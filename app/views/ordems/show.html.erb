@@ -4,16 +4,25 @@
     			<table cellspacing="0" id="tab">
                     <tr>
                         <td>Filo:</td>
-						<td>
+						<% @clases.each do |clase| %>
+							<% if @ordem.clase_id == clase.id %>
+								<% @filos.each do |filo| %>
+									<% if clase.id == filo.id %>
+										<td><%= filo.descricao %></td>
+									<% end %>
+								<% end %>
+							<% end %>
+						<% end %>
 						
-						</td>
                     </tr>
                     <tr>
             			<td>Classe:</td>
-            			<td>
-					<%= @ordem.clase_id %>
+						<% @clases.each do |clase| %>
+							<% if @ordem.clase_id == clase.id %>
+								<td><%= clase.descricao %></td>
+							<% end %>
+						<% end %>
 						
-						</td>
             		</tr>
                     <tr>
             			<td><b>Ordem:</b></td>
@@ -24,7 +33,7 @@
                         <td></td>
     				</tr>
 					<tr>
-                        <td><%= link_to image_tag("/assets/voltar.png", :size => "24x24"), ordems_path %><</td>
+                        <td><%= link_to image_tag("/assets/voltar.png", :size => "24x24"), ordems_path %></td>
                         <td style="width:900px;"></td>
         			</tr>
     			</table>
