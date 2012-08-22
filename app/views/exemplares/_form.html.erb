@@ -1,4 +1,5 @@
-﻿<%= form_for(@exemplare) do |f| %>
+﻿<div id="box">
+<%= form_for(@exemplare) do |f| %>
   <% if @exemplare.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@exemplare.errors.count, "erro") %> - Falha ao salvar Exemplar:</h2>
@@ -10,159 +11,112 @@
       </ul>
     </div>
   <% end %>
-    <table border="0" cellpadding="0" cellspacing="0" class="table_geral">
-        <tbody>
-            <tr class="odd">
-                <td width="120">
-                    Código:
-                </td>
-                <td width="329">
-                    <%= f.text_field :codigo_identificacao %>
-                </td>
-                <td>Imagem Dorso:
-                </td>
-                <td>
-                    <%= f.file_field :dorso %>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Nome:
-                </td>
-                <td>
-                    <%= f.text_field :nome_vulgar %>
-                </td>
-                <td>Imagem Costas:
-                </td>
-                <td>
-                    <%= f.file_field :costas %>
-                </td>
-            </tr>
-            <tr class="odd">
-                <td>
-                    Nome Científico:
-                </td>
-                <td>
-               		<%= f.text_field :nome_cientifico %>
-                </td>
-                <td>
-                    Filo:
-                </td>
-                <td>
-                    <%= f.select :filo_id, Filo.find(:all).collect { |item| [item.descricao,item.id] },{:include_blank => "Não Identificado"}  %>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Data da Coleta:
-                </td>
-                <td>
-                    <%= f.date_select :data_coleta %>
-                </td>
-                <td>
-                    Classe:
-                </td>
-                <td>
-                    <%= f.select :clase_id, Clase.find(:all).collect { |item| [item.descricao,item.id] },{:include_blank => "Não Identificado"}  %>
-                </td>
-            </tr>
-            <tr class="odd">
-                <td>
-                    Data da Chegada:
-                </td>
-                <td>
-                    <%= f.date_select :data_chegada %>
-                </td>
-                <td>
-                    Ordem:
-                </td>
-                <td>
-                    <%= f.select :ordem_id, Ordem.find(:all).collect { |item| [item.descricao,item.id] },{:include_blank => "Não Identificado"}  %>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Identificador:
-                </td>
-                <td>
-                    <%= f.text_field :identificador %>
-                </td>
-				<td>
-                    Família:
-                </td>
-                <td>
-                    <%= f.select :familia_id, Familium.find(:all).collect { |item| [item.descricao,item.id] },{:include_blank => "Não Identificado"}  %>
-                </td>
-                
-            </tr>
-            <tr class="odd">
-                <td>
-                    Localização do Acervo:
-                </td>
-                <td>
-                    <%= f.text_field :localizacao_acervo %>
-                </td>
-                <td>
-                    Genero:
-                </td>
-                <td>
-                     <%= f.select :genero_id, Genero.find(:all).collect { |item| [item.descricao,item.id] },{:include_blank => "Não Identificado"}  %>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Local de Origem:
-                </td>
-                <td>
-                    <%= f.text_field :local_origem %>
-                </td>
-                <td>
-                    Espécie:
-                </td>
-                <td>
-                    <%= f.select :espec_id, Espec.find(:all).collect { |item| [item.descricao,item.id] },{:include_blank => "Não Identificado"}  %>
-                </td>
-            </tr>
-			<tr>
-				<td>
-					Localização Geográfica:
-				</td>
-				<td>
-				<%= f.text_field :localizacao_geografica %>
-				</td>
-				<td>
-					Biografia:
-				</td>
-				<td>
-				 <%= f.text_area :biografia %>
-				</td>
-			</tr>
-			<tr>
-				<td>
-                Situação:
-            </td>
-            <td>
-                <%= f.radio_button "status", "1", { :checked => true } %> Ativo
-				<%= f.radio_button "status", "0" %> Inativo
-            </td>
-				<td>
-				</td>
-				<td>
-				</td>
-			</tr>
-        </tbody>
-    </table>
-    <br />
-    <table border="0" cellpadding="10" cellspacing="0" class="table_geral">
-      <tr>
-            <td>
-                <%= f.submit "Salvar" %>
-            </td>
-            <td>
-                <input id="btnCancelar" type="button" value="Cancelar" onclick="javascript:window.location='/exemplares'" />
-            </td>
-            <td style="width: 800px;">
-            </td>
-        </tr>
-	</table>
-<% end %>
+    	<h4 align="center"><hr />Cadastrar Exemplar<hr /></h4>
+    		<table cellspacing="0" id="tab">
+            		<form>
+                    <!-- primeira linha -->
+        			<tr>
+                    	<td>Código:</td>
+            			<td>
+                        	<%= f.text_field :codigo_identificacao %>
+                        </td>
+                		<td>Imagem Ventral:</td>
+                		<td>
+                        	<%= f.file_field :costas %>
+                        </td>
+                    </tr>
+                    <!-- segunda linha -->
+            		<tr>
+            			<td>Filo:</td>
+                        <td>
+                        	<%= f.select :filo_id, Filo.find(:all).collect { |item| [item.descricao,item.id] }  %>
+                		</td>
+                		<td>Imagem Dorsal:</td>
+                		<td>
+                        	<%= f.file_field :dorso %>
+                        </td>
+            		</tr>
+            		<!-- terceira linha -->	
+            		<tr>
+            			<td>Classe:</td>
+                        <td>
+                        	<%= f.select :clase_id, Clase.find(:all).collect { |item| [item.descricao,item.id] } %>
+                		</td>
+                		<td>Data da Coleta:</td>
+                		<td>
+                        	<%= f.date_select :data_coleta %>
+                        </td>
+            		</tr>
+                    <!-- quarta linha -->	
+            		<tr>
+                    	<td>Ordem:</td>
+                        <td>
+                    		<%= f.select :ordem_id, Ordem.find(:all).collect { |item| [item.descricao,item.id] } %>
+                		</td>
+                		
+                		<td>Data da Chegada:</td>
+                		<td>
+                        	<%= f.date_select :data_chegada %>
+                        </td>
+            		</tr>
+                    <!-- quinta linha -->	
+            		<tr>
+            			<td>Família:</td>
+                        <td>
+                        	<%= f.select :familia_id, Familium.find(:all).collect { |item| [item.descricao,item.id] } %>
+                		</td>
+                		<td>Identificador:</td>
+                        <td>
+                        	<%= f.text_field :identificador %>
+                        </td>
+                	</tr>
+                    <!-- sexta linha -->	
+            		<tr>
+                		<td>Genero:</td>
+                        <td>
+                    		<%= f.select :genero_id, Genero.find(:all).collect { |item| [item.descricao,item.id] } %>
+                		</td>	
+                		<td>Coletor:</td>
+                		<td>
+                        	<input type="text" id="coletor" />
+                        </td>
+            		</tr>
+                    <!-- sétima linha -->	
+            		<tr>
+                		<td>Espécie:</td>
+                		<td>
+                        	<%= f.text_field :nome_cientifico %>
+                        </td>
+                		<td>Local de Origem:</td>
+                        <td>
+                        	<%= f.text_field :local_origem %>
+                        </td>
+                	</tr>
+                    <!-- oitava linha -->	
+            		<tr>
+                		<td>Nome Vulgar:</td>
+                		<td>
+                        	<%= f.text_field :nome_vulgar %>
+                		<td></td>
+                		<td></td>
+            		</tr>
+                    <tr>
+                    	<td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+        			<tr>
+            			<td></td>
+            			<td align="right">
+                			<%= f.submit "Salvar" %>
+            			</td>
+                        <td align="left">
+                        	 <input id="btnCancelar" type="button" value="Cancelar" onclick="javascript:window.location='/exemplares'" />
+                        </td>
+                        <td></td>
+            		</tr>
+        		</form>
+    	</table>
+	<% end %>
+    </div>
