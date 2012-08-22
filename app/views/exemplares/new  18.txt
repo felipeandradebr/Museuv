@@ -1,0 +1,97 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <b>Codigo de identificacao:</b>
+  <%= @exemplare.codigo_identificacao %>
+</p>
+
+<p>
+  <b>Local de origem:</b>
+  <%= @exemplare.local_origem %>
+</p>
+
+<p>
+  <b>Localizacao geografica:</b>
+  <%= @exemplare.localizacao_geografica %>
+</p>
+
+<p>
+  <b>Identificador:</b>
+  <%= @exemplare.identificador %>
+</p>
+
+<p>
+  <b>Localizacao do acervo:</b>
+  <%= @exemplare.localizacao_acervo %>
+</p>
+
+<p>
+  <b>Biografia:</b>
+  <%= @exemplare.biografia %>
+</p>
+
+<p>
+  <b>Data de coleta:</b>
+  <%= @exemplare.data_coleta %>
+</p>
+
+<p>
+  <b>Data da chegada:</b>
+  <%= @exemplare.data_chegada %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @exemplare.status %>
+</p>
+
+<p>
+  <b>Filo:</b>
+  <%= @exemplare.filo_id %>
+</p>
+
+<p>
+  <b>Clase:</b>
+  <%= @exemplare.clase_id %>
+</p>
+
+<p>
+  <b>Ordem:</b>
+  <%= @exemplare.ordem_id %>
+</p>
+
+
+<p>
+  <b>Familia:</b>
+  <%= @exemplare.familia_id %>
+</p>
+
+
+<p>
+  <b>Genero:</b>
+  <%= @exemplare.genero_id %>
+</p>
+
+
+<p>
+  <b>Espec:</b>
+  <%= @exemplare.espec_id %>
+</p>
+
+<p>
+  <b>Imagem Dorso</b><br />
+  <%= image_tag @exemplare.dorso.url %>
+</p>
+
+<p>
+  <b>Imagem Costas</b><br />
+  <%= image_tag @exemplare.costas.url %>
+</p>
+
+
+
+
+<%= link_to 'Editar', edit_exemplare_path(@exemplare) %> |
+<%= link_to 'Voltar', exemplares_path %>

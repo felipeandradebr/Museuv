@@ -1,21 +1,79 @@
-﻿<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Descrição:</b>
-  <%= @genero.descricao %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @genero.status %>
-</p>
-
-<p>
-  <b>Família:</b>
-  <%= @genero.familia_id %>
-</p>
-
-
-
-<%= link_to 'Editar', edit_genero_path(@genero) %> |
-<%= link_to 'Voltar', generos_path %>
+﻿    <div id="box">
+    	<h4 align="center"><hr />Gênero<hr /></h4>
+    			<form>
+    			<table cellspacing="0" id="tab">
+                    
+					<tr>
+                        <td>Filo:</td>
+                        <% @familia.each do |familium| %>
+							<% if @genero.familia_id  == familium.id %>
+								<% @ordems.each do |ordem| %>
+									<% if familium.ordem_id == ordem.id %>
+										<% @clases.each do |clase| %>
+											<% if ordem.clase_id == clase.id %>
+												<% @filos.each do |filo| %>
+													<% if clase.filo_id == filo.id %>
+														<td><%= filo.descricao %></td>
+													<% end %>
+												<% end %>
+											<% end %>
+										<% end %>
+									<% end %>
+								<% end %>
+							<% end %>
+						<% end %>
+                    </tr>
+                    <tr>
+            			<td>Classe:</td>
+            			<% @familia.each do |familium| %>
+							<% if @genero.familia_id  == familium.id %>
+								<% @ordems.each do |ordem| %>
+									<% if familium.ordem_id == ordem.id %>
+										<% @clases.each do |clase| %>
+											<% if ordem.clase_id == clase.id %>
+												<td><%= clase.descricao %></td>
+											<% end %>
+										<% end %>
+									<% end %>
+								<% end %>
+							<% end %>
+						<% end %>
+            		</tr>
+                    <tr>
+            			<td>Ordem:</td>
+            			<% @familia.each do |familium| %>
+							<% if @genero.familia_id  == familium.id %>
+								<% @ordems.each do |ordem| %>
+									<% if familium.ordem_id == ordem.id %>
+										<td><%= ordem.descricao %></td>
+									<% end %>
+								<% end %>
+							<% end %>
+						<% end %>
+						
+						
+            		</tr>
+                    <tr>
+            			<td>Família:</td>
+						<% @familia.each do |familium| %>
+							<% if @genero.familia_id  == familium.id %>
+								<td><%= familium.descricao %></td>
+							<% end %>
+						<% end %>
+						
+            		</tr>
+                    <tr>
+            			<td><b>Gênero:</b></td>
+            			<td><b>  <%= @genero.descricao %></b></td>
+            		</tr>
+                	<tr>
+                        <td></td>
+                        <td></td>
+    				</tr>
+					<tr>
+                        <td><%= link_to image_tag("/assets/voltar.png", :size => "24x24"), generos_path %></td>
+                        <td style="width:900px;"></td>
+        			</tr>
+    			</table>
+    			</form>
+    </div>

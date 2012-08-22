@@ -17,6 +17,10 @@ class GenerosController < ApplicationController
   # GET /generos/1.json
   def show
     @genero = Genero.find(params[:id])
+	@familia = Familium.all
+	@ordems = Ordem.all
+	@clases = Clase.all
+	@filos = Filo.all
 
     respond_to do |format|
       format.html # show.html.erb

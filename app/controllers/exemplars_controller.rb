@@ -28,7 +28,10 @@ class ExemplarsController < ApplicationController
   # GET /exemplars/new.json
   def new
     @exemplar = Exemplar.new
-
+	@familia = Familium.all
+	@ordems = Ordem.all
+	@clases = Clase.all
+	@filos = Filo.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @exemplar }

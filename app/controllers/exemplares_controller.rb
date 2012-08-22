@@ -18,6 +18,11 @@ class ExemplaresController < ApplicationController
   # GET /exemplares/1.json
   def show
     @exemplare = Exemplare.find(params[:id])
+	@generos = Genero.all
+	@familia = Familium.all
+	@ordems = Ordem.all
+	@clases = Clase.all
+	@filos = Filo.all
 
     respond_to do |format|
       format.html # show.html.erb
