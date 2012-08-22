@@ -29,13 +29,13 @@ body {
 	width:25%;	
 	}
 
-#usuario{
+#usuario_logado{
 	float:left; 
 	width:75%; 
 	padding-top:60px;	
 	}
 	
-#usuario a {
+#usuario_logado a {
 	text-decoration: none;
 	}
 /* ---- CONT ---- */
@@ -131,8 +131,8 @@ li > ul
 
 #tab
 {
-width:900px;	
-border-collapse: collapse;
+	width:900px;	
+	border-collapse: collapse;
     border: 1px solid #009966;
     color: #000;    
 }
