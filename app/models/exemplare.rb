@@ -1,4 +1,4 @@
-class Exemplare < ActiveRecord::Base
+ï»¿class Exemplare < ActiveRecord::Base
   #Busca
   scope :with_nome_vulgar, lambda {|parameter| where('nome_vulgar like ?', "%#{parameter}%")}
   #scope :with_nome_vulgar, lambda {|parameter| where('filo_id like ?', "%#{parameter}%")}
@@ -23,11 +23,11 @@ class Exemplare < ActiveRecord::Base
 					:url => "/uploads/:attachment/:id/:style/:basename.:extension",
 					:path => ":rails_root/public/uploads/:attachment/:id/:style/:basename.:extension"
   
-  #Validação
+  #ValidaÃ§Ã£o
   validates_presence_of :nome_vulgar, :message =>" - Deve ser preenchido"
   validates_attachment_content_type :dorso, :content_type => ['image/jpeg', 'image/png']
   validates_attachment_content_type :costas, :content_type => ['image/jpeg', 'image/png']
-  validates_uniqueness_of :nome_vulgar, :message =>" - Já existente"
+  validates_uniqueness_of :nome_vulgar, :message =>" - JÃ¡ existente"
 
   
   def self.search(parameters)
