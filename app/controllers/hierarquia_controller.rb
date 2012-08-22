@@ -13,6 +13,10 @@ end
 
   def show
 	@exemplares = Exemplare.search(params)
+	@generos = Genero.all
+	@familia = Familium.all
+	@ordems = Ordem.all
+	@clases = Clase.all
 	@filos = Filo.all
 
     respond_to do |format|

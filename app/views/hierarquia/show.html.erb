@@ -1,1 +1,85 @@
-﻿<h1>Funciona?</h1>
+﻿<div id="box">
+<h2> Relatorio Hierárquico</h2>
+<% i=0%>
+<table id="tab" cellpadding="15px" border="1px;">
+        <thead>
+            <tr>
+                <th>
+                    Exemplar
+                </th>
+                <th>
+                    Espécie
+                </th>
+				<th>
+                    Filo
+                </th>
+                <th>
+                    Classe
+                </th>
+                <th>
+                    Ordem
+                </th>
+				<th>
+                    Familia
+                </th>
+				<th>
+                    Gênero
+                </th>
+				
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="odd">
+			<% @exemplares.each do |exemplare| %>
+			<% i+=1%>
+                <td >
+                    <%= exemplare.nome_vulgar %>
+                </td>
+				<td>
+				<%= exemplare.nome_cientifico %>
+				</td>
+                <td>
+                <% @filos.each do |filo| %>
+					<% if exemplare.filo_id == filo.id %>
+						<%= filo.descricao %>
+					<% end %>
+				<% end %>
+                </td>
+                <td>
+				<% @clases.each do |clase| %>
+					<% if exemplare.clase_id  == clase.id %>
+						<%= clase.descricao %>
+					<% end %>
+				<% end %>
+                </td>
+                <td>
+                <% @ordems.each do |ordem| %>
+					<% if exemplare.ordem_id  == ordem.id %>
+						<%= ordem.descricao %>
+					<% end %>
+				<% end %>   
+                </td>
+				<td>
+                <% @familia.each do |familium| %>
+					<% if exemplare.familia_id  == familium.id %>
+						<%= familium.descricao %>
+					<% end %>
+				<% end %>
+                </td>
+				<td>
+				<% @generos.each do |genero| %>
+					<% if exemplare.genero_id  == genero.id %>
+						<%= genero.descricao %>
+					<% end %>
+				<% end %>
+				</td>
+            </tr>
+			<% end %>
+        </tbody>
+    </table>
+<br />
+<p>
+	<b>Total de exempares: <%= i %></b>
+</p>
+
+</div>
