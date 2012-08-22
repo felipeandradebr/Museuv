@@ -5,10 +5,10 @@
                     <tr>
                         <td>Filo:</td>
 						<% @filos.each do |filo| %>
-							<% if exemplare.filo_id == filo.id %>
-							<td><%= filo.descricao %></td>
+							<% if clase.filo_id == filo.id %>
+								<td><%= filo.descricao %></td>
 							<% end %>
-					<% end %>
+						<% end %>
                     </tr>
                     <tr>
             			<td><b>Classe:</b></td>
