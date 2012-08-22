@@ -17,6 +17,7 @@ class ClasesController < ApplicationController
   # GET /clases/1.json
   def show
     @clase = Clase.find(params[:id])
+	@filos = Filo.all
 
     respond_to do |format|
       format.html # show.html.erb

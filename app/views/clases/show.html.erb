@@ -4,7 +4,11 @@
     			<table cellspacing="0" id="tab">
                     <tr>
                         <td>Filo:</td>
-                        <td><%= @clase.filo_id %></td>
+						<% @filos.each do |filo| %>
+							<% if exemplare.filo_id == filo.id %>
+							<td><%= filo.descricao %></td>
+							<% end %>
+					<% end %>
                     </tr>
                     <tr>
             			<td><b>Classe:</b></td>
