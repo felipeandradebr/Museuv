@@ -4,12 +4,15 @@
   
 	<title>Museu Zoo</title>
   
-   <%= csrf_meta_tags %>
+  
    <!-- CSS -->
    <%= stylesheet_link_tag    "application", :media => "all" %>
    <!-- JavaScript -->
    <%= javascript_include_tag "application" %>
    <script type="text/javascript">
+    
+	<%= csrf_meta_tags %>
+	
    <!-- script do menu drop down-->
         $(document).ready(function () {
             $("#menu #menu2 li ul").hide();
