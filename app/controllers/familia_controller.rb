@@ -6,6 +6,9 @@ class FamiliaController < ApplicationController
   # GET /familia.json
   def index
     @familia = Familium.all
+	@ordems = Ordem.all
+	@clases = Clase.all
+	@filos = Filo.all
 
     respond_to do |format|
       format.html # index.html.erb

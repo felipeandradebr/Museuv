@@ -8,7 +8,7 @@
 					  <% @ordems.each do |ordem| %>
 							<% if @familium.ordem_id == ordem.id %>
 								<% @clases.each do |clase| %>
-									<% if @ordem.clase_id == clase.id %>
+									<% if ordem.clase_id == clase.id %>
 										<% @filos.each do |filo| %>
 											<% if clase.filo_id == filo.id %>
 												<td><%= filo.descricao %></td>
@@ -26,7 +26,7 @@
 						<% @ordems.each do |ordem| %>
 							<% if @familium.ordem_id == ordem.id %>
 								<% @clases.each do |clase| %>
-									<% if @ordem.clase_id == clase.id %>
+									<% if ordem.clase_id == clase.id %>
 										<td><%= clase.descricao %></td>
 									<% end %>
 								<% end %>
