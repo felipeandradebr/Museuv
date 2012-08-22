@@ -4,12 +4,13 @@
     			<table cellspacing="0" id="tab">
                     <tr>
                         <td>Filo:</td>
-                        <% @ordems.each do |ordem| %>
+                      
+					  <% @ordems.each do |ordem| %>
 							<% if @familium.ordem_id == ordem.id %>
 								<% @clases.each do |clase| %>
-									<% if clase.descricao == clase.id %>
+									<% if @ordem.clase_id == clase.id %>
 										<% @filos.each do |filo| %>
-											<% if clase.id == filo.id %>
+											<% if clase.filo_id == filo.id %>
 												<td><%= filo.descricao %></td>
 											<% end %>
 										<% end %>
@@ -17,20 +18,21 @@
 								<% end %>
 							<% end %>
 						<% end %>
+					  
+					  
                     </tr>
                     <tr>
             			<td>Classe:</td>
 						<% @ordems.each do |ordem| %>
 							<% if @familium.ordem_id == ordem.id %>
 								<% @clases.each do |clase| %>
-									<% if ordem.id == clase.id %>
-										
-												<td><%= clase.descricao %></td>
-											
+									<% if @ordem.clase_id == clase.id %>
+										<td><%= clase.descricao %></td>
 									<% end %>
 								<% end %>
 							<% end %>
 						<% end %>
+					
             		</tr>
                     <tr>
             			<td>Ordem:</td>
