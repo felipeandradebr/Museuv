@@ -7,4 +7,5 @@ class Ordem < ActiveRecord::Base
   
   validates_uniqueness_of :descricao, :message =>" - Já existente"
   validates_presence_of :descricao, :message =>" - Deve ser preenchido"
+  
 end
