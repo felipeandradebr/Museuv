@@ -1,19 +1,23 @@
-﻿<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Descrição:</b>
-  <%= @clase.descricao %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @clase.status %>
-</p>
-
-<p>
-  <b>Filo</b>
-  <%= @clase.filo_id %>
-</p>
-
-<%= link_to 'Editar', edit_clase_path(@clase) %> |
-<%= link_to 'Voltar', clases_path %>
+﻿<div id="box">
+    	<h4 align="center"><hr />Classe<hr /></h4>
+    			<form>
+    			<table cellspacing="0" id="tab">
+                    <tr>
+                        <td>Filo:</td>
+                        <td><%= @clase.filo_id %></td>
+                    </tr>
+                    <tr>
+            			<td><b>Classe:</b></td>
+            			<td><b>  <%= @clase.descricao %></b></td>
+            		</tr>
+                	<tr>
+                        <td></td>
+                        <td></td>
+    				</tr>
+					<tr>
+                        <td><%= link_to image_tag("/assets/voltar.png", :size => "24x24"), clases_path %></td>
+                        <td style="width:900px;"></td>
+        			</tr>
+    			</table>
+    			</form>
+    </div>
