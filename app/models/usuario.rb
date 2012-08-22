@@ -1,8 +1,8 @@
-require 'digest'
+ï»¿require 'digest'
 
 class Usuario < ActiveRecord::Base
   attr_accessor :senha
-  #senha = senha em formato de texto - não é gravada no banco de dados
+  #senha = senha em formato de texto - nÃ£o Ã© gravada no banco de dados
   #hashed_password = senha criptografada
   
   attr_accessible :nome, :email, :funcao, :usuario, :hashed_password, :status, :senha, :senha_confirmation
@@ -17,7 +17,7 @@ class Usuario < ActiveRecord::Base
 					:confirmation => true,
 					:if => :password_required?
   validates_format_of :email, :with => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
-  validates_uniqueness_of :nome, :usuario, :email, :message =>" - Já existente"
+  validates_uniqueness_of :nome, :usuario, :email, :message =>" - JÃ¡ existente"
 					
 	before_save :encrypt_new_password
 	

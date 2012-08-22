@@ -1,4 +1,4 @@
-class Exemplar < ActiveRecord::Base
+﻿class Exemplar < ActiveRecord::Base
   
   scope :with_nome_vulgar, lambda {|parameter| where('nome_vulgar like ?', "%#{parameter}%")}
   #Equivalente a: SELECT exemplars.nome_vulgar, filos.descricao FROM exemplars INNER JOIN filos ON exemplars.filo_id = filos.id ORDER BY filos.descricao
