@@ -6,4 +6,5 @@ class Filo < ActiveRecord::Base
   scope :busca, joins(:clases).order("filos.descricao")
   
   validates_presence_of :descricao, :message =>" - Deve ser preenchido"
+  validates_uniqueness_of :descricao, :message =>" - Já existente" 
 end

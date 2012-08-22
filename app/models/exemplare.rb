@@ -25,7 +25,9 @@ class Exemplare < ActiveRecord::Base
   
   #Validação
   validates_presence_of :nome_vulgar, :message =>" - Deve ser preenchido"
-  validates_attachment_content_type :dorso, :costas, :content_type => ['image/jpeg', 'image/png']
+  validates_attachment_content_type :dorso, :content_type => ['image/jpeg', 'image/png']
+  validates_attachment_content_type :costas, :content_type => ['image/jpeg', 'image/png']
+  validates_uniqueness_of :nome_vulgar, :message =>" - Já existente"
 
   
   def self.search(parameters)
