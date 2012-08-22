@@ -6,7 +6,7 @@
                         <td>Filo:</td>
 						<% @filos.each do |filo| %>
 							<% if clase.filo_id == filo.id %>
-								<td><%= filo.descricao %></td>
+								<td><%= @filo.descricao %></td>
 							<% end %>
 						<% end %>
                     </tr>
