@@ -17,6 +17,8 @@ Museum::Application.routes.draw do
 
   resources :usuarios
   
+  resources :relatorio
+  
   match ':controller(/:action(/:id(.:format)))'
   root :to => "exemplares#index"
   
@@ -25,6 +27,8 @@ Museum::Application.routes.draw do
   match '/logout' => "sessions#destroy", :as => "logout"
   
   get "page/:id" => "page#index", :as => :page
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
