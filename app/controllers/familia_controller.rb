@@ -17,6 +17,9 @@ class FamiliaController < ApplicationController
   # GET /familia/1.json
   def show
     @familium = Familium.find(params[:id])
+	@ordems = Ordem.all
+	@clases = Clase.all
+	@filos = Filo.all
 
     respond_to do |format|
       format.html # show.html.erb

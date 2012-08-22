@@ -7,7 +7,7 @@
 						<% @clases.each do |clase| %>
 							<% if @ordem.clase_id == clase.id %>
 								<% @filos.each do |filo| %>
-									<% if clase.id == filo.id %>
+									<% if clase.filo_id == filo.id %>
 										<td><%= filo.descricao %></td>
 									<% end %>
 								<% end %>

@@ -1,22 +1,58 @@
-﻿<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Descrição:</b>
-  <%= @familium.descricao %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @familium.status %>
-</p>
-
-<p>
-  <b>Ordem:</b>
-  <%= @familium.ordem_id %>
-</p>
-
-
-
-
-<%= link_to 'Editar', edit_familium_path(@familium) %> |
-<%= link_to 'Mostrar', familia_path %>
+﻿<div id="box">
+    	<h4 align="center"><hr />Família<hr /></h4>
+    			<form>
+    			<table cellspacing="0" id="tab">
+                    <tr>
+                        <td>Filo:</td>
+                        <% @ordems.each do |ordem| %>
+							<% if @familium.ordem_id == ordem.id %>
+								<% @clases.each do |clase| %>
+									<% if clase.descricao == clase.id %>
+										<% @filos.each do |filo| %>
+											<% if clase.id == filo.id %>
+												<td><%= filo.descricao %></td>
+											<% end %>
+										<% end %>
+									<% end %>
+								<% end %>
+							<% end %>
+						<% end %>
+                    </tr>
+                    <tr>
+            			<td>Classe:</td>
+						<% @ordems.each do |ordem| %>
+							<% if @familium.ordem_id == ordem.id %>
+								<% @clases.each do |clase| %>
+									<% if ordem.id == clase.id %>
+										
+												<td><%= clase.descricao %></td>
+											
+									<% end %>
+								<% end %>
+							<% end %>
+						<% end %>
+            		</tr>
+                    <tr>
+            			<td>Ordem:</td>
+						<% @ordems.each do |ordem| %>
+							<% if @familium.ordem_id == ordem.id %>
+								<td><%= ordem.descricao %></td>
+							<% end %>
+						<% end %>
+						
+            		</tr>
+                    <tr>
+            			<td><b>Família:</b></td>
+            			<td><b>  <%= @familium.descricao %></b></td>
+            		</tr>
+                	<tr>
+                        <td></td>
+                        <td></td>
+    				</tr>
+					<tr>
+                        <td><input id="btnVoltar" type="button" value="Voltar" onclick="javascript:history.go(-1)"/></td>
+                        <td style="width:900px;"></td>
+        			</tr>
+    			</table>
+    			</form>
+    </div>
