@@ -9,6 +9,7 @@ gem 'mysql2'
 
 #Para upload de imagens
 gem 'paperclip'
+gem "rmagick", "~> 2.13.1"
 
 gem "execjs", "~> 1.4.0"
 
