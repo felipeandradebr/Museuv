@@ -6,6 +6,8 @@ class OrdemsController < ApplicationController
   # GET /ordems.json
   def index
     @ordems = Ordem.all
+	@clases = Clase.all
+	@filos = Filo.all
 
     respond_to do |format|
       format.html # index.html.erb
