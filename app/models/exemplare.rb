@@ -16,10 +16,10 @@ class Exemplare < ActiveRecord::Base
   attr_accessible  :codigo_de_identificacao, :data_de_coleta, :data_da_chegada, :localizacao_do_acervo, :local_de_origem
   
   #Anexos
-  has_attached_file :dorso, :styles => { :small => "150x150>" },
+  has_attached_file :dorso, 
 					:url => "/uploads/:attachment/:id/:style/:basename.:extension",
 					:path => ":rails_root/public/uploads/:attachment/:id/:style/:basename.:extension"
-  has_attached_file :costas, :styles => { :small => "150x150>" },
+  has_attached_file :costas, 
 					:url => "/uploads/:attachment/:id/:style/:basename.:extension",
 					:path => ":rails_root/public/uploads/:attachment/:id/:style/:basename.:extension"
   
