@@ -2,6 +2,8 @@
   belongs_to :clase
   has_many :familium
   
+  self.per_page = 10
+  
   has_many :exemplares
   attr_accessible :clase_id, :descricao, :status
   

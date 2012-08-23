@@ -3,7 +3,7 @@ class UsuariosController < ApplicationController
 #before_filter :authenticate
 
 def index
-	@usuarios = Usuario.find(:all)
+	@usuarios = Usuario.paginate(:page => params[:page])
 end
 
 def new 

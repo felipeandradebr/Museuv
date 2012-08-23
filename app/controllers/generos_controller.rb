@@ -5,7 +5,7 @@ class GenerosController < ApplicationController
   # GET /generos
   # GET /generos.json
   def index
-    @generos = Genero.all
+    @generos = Genero.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

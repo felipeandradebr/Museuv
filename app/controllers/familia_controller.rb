@@ -5,7 +5,7 @@ class FamiliaController < ApplicationController
   # GET /familia
   # GET /familia.json
   def index
-    @familia = Familium.all
+    @familia = Familium.paginate(:page => params[:page])
 	@ordems = Ordem.all
 	@clases = Clase.all
 	@filos = Filo.all

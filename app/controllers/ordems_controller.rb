@@ -5,7 +5,7 @@ class OrdemsController < ApplicationController
   # GET /ordems
   # GET /ordems.json
   def index
-    @ordems = Ordem.all
+    @ordems = Ordem.paginate(:page => params[:page])
 	@clases = Clase.all
 	@filos = Filo.all
 

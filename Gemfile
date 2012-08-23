@@ -10,6 +10,9 @@ gem 'mysql2'
 #Para upload de imagens
 gem 'paperclip'
 
+#Para paginação
+gem "will_paginate", "~> 3.0.3"
+
 gem "execjs", "~> 1.4.0"
 
 gem 'jquery-rails'

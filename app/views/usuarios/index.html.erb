@@ -33,4 +33,10 @@
 			<% end %>
         </tbody>
     </table>
+	<div class="digg_pagination">
+		<div clas="page_info">
+			<%= page_entries_info @exemplares %>
+		</div>
+		<%= will_paginate @exemplares, :container => false %>
+  </div>
     </div>

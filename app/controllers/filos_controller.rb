@@ -5,7 +5,7 @@ class FilosController < ApplicationController
   # GET /filos
   # GET /filos.json
   def index
-    @filos = Filo.all
+    @filos = Filo.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

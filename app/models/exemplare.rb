@@ -29,6 +29,10 @@
   validates_attachment_content_type :costas, :content_type => ['image/jpeg', 'image/png']
   validates_uniqueness_of :nome_vulgar, :message =>" - Já existente"
 
+  #Paginação
+ 
+		self.per_page = 10
+	
   
   def self.search(parameters)
 	

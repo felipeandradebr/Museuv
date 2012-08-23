@@ -3,6 +3,8 @@
   has_many :generos
   has_many :exemplares
   
+  self.per_page = 10
+  
   attr_accessible :descricao, :ordem_id, :status
   
   validates_presence_of :descricao, :message =>" - Deve ser preenchido"

@@ -7,6 +7,8 @@ class Usuario < ActiveRecord::Base
   
   attr_accessible :nome, :email, :funcao, :usuario, :hashed_password, :status, :senha, :senha_confirmation
   
+  self.per_page = 10
+  
   validates_presence_of :nome
   validates_presence_of :funcao  
   validates :senha_confirmation, :presence => true,
@@ -19,7 +21,7 @@ class Usuario < ActiveRecord::Base
   validates_format_of :email, :with => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
   validates_uniqueness_of :nome, :usuario, :email, :message =>" - Já existente"
 					
-	before_save :encrypt_new_password
+  before_save :encrypt_new_password
 	
 	def self.authenticate(usuario, senha)
 		usuario = find_by_usuario(usuario)

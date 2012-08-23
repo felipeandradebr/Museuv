@@ -5,7 +5,7 @@ class ClasesController < ApplicationController
   # GET /clases
   # GET /clases.json
   def index
-    @clases = Clase.all
+    @clases = Clase.paginate(:page => params[:page])
 	@filos = Filo.all
     respond_to do |format|
       format.html # index.html.erb
