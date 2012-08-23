@@ -24,7 +24,7 @@ Museum::Application.routes.draw do
   resources :home
   
   match ':controller(/:action(/:id(.:format)))'
-  root :to => "exemplares#index"
+  root :to => "home#index"
   
   resource :session
   match '/login' => "sessions#new", :as => "login"

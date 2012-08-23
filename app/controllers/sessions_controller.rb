@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 	
 		if usuario = Usuario.authenticate(params[:usuario], params[:hashed_password])
 			session[:usuario_id] = usuario.id
-			redirect_to root_path, :notice => "Logado com Sucesso!"
+			redirect_to :exemplares, :notice => "Logado com Sucesso!"
 		else
 			flash.now[:alert] = "Login ou Senha inválidos!"
 			render :action => 'new'
