@@ -13,3 +13,7 @@
 //= require_tree .
 //= require jquery
 //= require jquery_ujs
+//= require jquery_eye
+//= require jquery_spacegallery
+//= require jquery_layout
+//= require jquery_utils
