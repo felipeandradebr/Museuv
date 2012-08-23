@@ -1,5 +1,0 @@
-<h1>Novo filo</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Voltar', filos_path %>

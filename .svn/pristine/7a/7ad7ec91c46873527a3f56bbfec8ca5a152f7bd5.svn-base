@@ -1,5 +1,0 @@
-﻿<%= render :partial => "/comum/menu" %>
-<h2>Editar Classe</h2>
-<%= render 'form' %>
-
-

@@ -1,5 +1,0 @@
-<h1>New clase</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', clases_path %>

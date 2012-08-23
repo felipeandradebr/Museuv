@@ -1,7 +1,0 @@
-<%= render :partial => "/comum/menu" %>
-<h2>Editar Ordem</h2>
-<%= render 'form' %>
-
-
-
-

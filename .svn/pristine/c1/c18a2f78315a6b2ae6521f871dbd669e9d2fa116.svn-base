@@ -1,6 +1,0 @@
-﻿<h1>Editar Espécie</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Mostrar', @espec %> |
-<%= link_to 'Voltar', especs_path %>

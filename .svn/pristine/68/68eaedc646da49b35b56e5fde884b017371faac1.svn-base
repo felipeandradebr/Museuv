@@ -1,3 +1,0 @@
-﻿<%= render :partial => "/comum/menu" %>
-<h2>Cadastrar Especie</h2>
-<%= render 'form' %>

@@ -1,6 +1,0 @@
-<h1>Editar Ordem</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Mostrar', @ordem %> |
-<%= link_to 'Voltar', ordems_path %>

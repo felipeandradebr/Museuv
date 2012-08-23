@@ -1,9 +1,0 @@
-class Clase < ActiveRecord::Base
-  belongs_to :filos
-  #has_many :ordes verificar ortografia
-  #has_many :exemplares
-  attr_accessible :descricao, :status, :filo_id
-  
-  #scope :filos, select("clases.descricao, filos.descricao").joins("filos ON clases.filo_id = filos.id").order("filos.descricao")
-  
-end

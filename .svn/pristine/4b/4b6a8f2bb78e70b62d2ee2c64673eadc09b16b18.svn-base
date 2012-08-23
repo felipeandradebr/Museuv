@@ -1,5 +1,0 @@
-<%= render :partial => "comum/menu" %>
-<h2>Cadastrar Filo</h2>
-<%= render 'form' %>
-
-
