@@ -10,8 +10,11 @@
                         </td>
                 		<td>Imagem Ventral:</td>
                 		<td colspan="3">
-                        	img
-                        </td>
+							<div id ="foto">
+                        		<%= image_tag @exemplare.costas.url %>
+								<img src="@exemplare.costas.url" />
+							</div>
+						</td>
                     </tr>
                     <!-- segunda linha -->
             		<tr>
@@ -25,7 +28,7 @@
                 		</td>
                 		<td>Imagem Dorsal:</td>
                 		<td>
-                        	oi
+                        	<%= image_tag @exemplare.dorso.url %>
                         </td>
                         <td></td>
                         <td></td>
