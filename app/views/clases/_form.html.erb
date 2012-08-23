@@ -17,7 +17,7 @@
                     <tr>
                         <td>Filo:</td>
                         <td>
-                        	<%= f.select :filo_id, Filo.find(:all).collect { |item| [item.descricao,item.id] } , {:include_blank => "Não Identificado"}%>
+                        	<%= f.select :filo_id, Filo.find(:all).collect { |item| [item.descricao,item.id] } %>
                         </td>
                         <td style="width: 800px;"></td>
                     </tr>
