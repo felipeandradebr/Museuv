@@ -1,5 +1,6 @@
 
 class HierarquiaController < ApplicationController
+before_filter :authenticate
 
  def relatorrio_exemplares
 	@exemplares = Exemplare.search(params)
