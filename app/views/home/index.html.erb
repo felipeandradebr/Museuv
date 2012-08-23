@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Museu Virtual</title>
+  <%= stylesheet_link_tag    "layout", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+    <script type="text/javascript" src="/assets/jquery.js"></script>
+    <script type="text/javascript" src="/assets/eye.js"></script>
+    <script type="text/javascript" src="/assets/utils.js"></script>
+    <script type="text/javascript" src="/assets/spacegallery.js"></script>
+    <script type="text/javascript" src="/assets/layout.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    	<br /><a href="/home"><img src="/assets/museu-logo.png" /></a><br /><br />
+        <ul class="navigationTabs">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Pesquisa</a></li>
+            <li><a href="#contato">Sobre</a></li>
+            <li><a href="login">Login</a></li>
+        </ul>
+        
+        <div class="tabsContent">
+            <!-- primeira aba -->
+            <div class="tab">
+                <p>Exemplares cadastrados:</p><br />
+				<div id="myGallery" class="spacegallery">
+					<% @exemplares.each do |exemplare| %>
+					<% unless FileTest.exists?("#{exemplare.costas.url}") %>
+						<%=	image_tag exemplare.costas.url %>
+					<% end %>
+					<% end %>
+                </div>
+            </div>
+            
+            <!-- segunda aba -->
+            <div class="tab">
+            	<br /><br />
+                <form> 
+            		<p align="center">
+            			<input id="txtBuscar" type="text" />
+    					<input id="btnBuscar" type="button" value="OK" />
+            		</p>
+            	</form>
+            	<br />
+    		<table id="tab" border="1px;">
+                <thead>
+                    <tr>
+                        <th width="39%">Nome Vulgar</th>
+                        <th width="30%">Espécie</th>
+                        <th width="30%">Local de Origem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>xxxxxxxxxx</td>
+                        <td>xxxxxxxxxx</td>
+                        <td>xxxxxxxxxx</td>
+                    </tr>              
+            	</tbody>
+    	</table>
+        <br /><br />
+
+            
+            </div>
+            
+            <!-- terceira aba -->
+            <div class="tab">
+                 <p>Texto sobre o Museu de Zoologia da UNEB.</p>     
+            </div>
+        </div>
+		
+        <br />
+        <p align="center" style="font-size:10px; color:#666">:. Universidade do Estado da Bahia - Museu de Zoologia - um projeto de: <a href="equipe.php" target="_blank" style="color:#666">Museu Virtual 3D</a> .:</p>
+    </div>
+</body>
+</html>

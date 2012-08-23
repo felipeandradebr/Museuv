@@ -21,6 +21,8 @@ Museum::Application.routes.draw do
   
   resources :hierarquia
   
+  resources :home
+  
   match ':controller(/:action(/:id(.:format)))'
   root :to => "exemplares#index"
   
