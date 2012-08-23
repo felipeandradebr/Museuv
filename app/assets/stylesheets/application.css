@@ -228,5 +228,93 @@ a{
 	text-decoration:none;
 	color:#000066;
 	}
+#home{
+border-collapse:collapse;
+text-align: center;
+	overflow: auto;
+	font-family: Verdana, Geneva, sans-serif; 
+	font-size: 16px;	
+}
 
+.wrapper {
+	width: 700px;
+	margin: 0 auto;
+	text-align: left;
+	}
+.navigationTabs {
+	height: 23px; /* altura da aba */
+	border-bottom: 1px solid #ccc;
+	}
+.navigationTabs li {
+	float: left;
+	height: 23px; /* altura da tabela da aba */
+	padding-right: 3px;
+	}
+.navigationTabs li a{
+	float: left;
+	dispaly: block;
+	height: 23px;
+	line-height: 23px;
+	padding: 0 10px;
+	overflow: hidden;
+	color: #000; /* cor dos nomes (links) das abas - home, contato */
+	background-color: #eee; /* cor das abas não selecionadas */
+	position: relative;
+	text-decoration: none;
+	}
+.navigationTabs li a:hover {
+	background-color: #f0f0f0;
+	}
+.navigationTabs li a.active {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-bottom: 0px solid;
+	}
+.tabsContent {
+	border: 1px solid #ccc;
+	border-top: 0px solid;
+	width: 698px; /* largura da tabela */
+	overflow: hidden;
+	}
+.tab {
+	padding: 26px;
+	display: none;
+	}
 
+/* SPACEGALLERY */
+
+.spacegallery {
+	position: relative;
+	overflow: hidden;
+}
+.spacegallery img {
+	position: absolute;
+	left: 50%;
+}
+.spacegallery a {
+	position: absolute;
+	z-index: 1000;
+	display: block;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(images/blank.gif);
+}
+
+/* CUSTOM */
+
+#myGallery {
+	width: 100%;
+	height: 350px; /* altura da tabela */
+}
+#myGallery img {
+	border: 2px solid #52697E; /* borda das imagens */
+}
+a.loading {
+	background: #fff url(../images/ajax_small.gif) no-repeat center;
+}
+
+a.hover{
+	
+}
